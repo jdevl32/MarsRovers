@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MarsRovers.Model
+﻿namespace MarsRovers.Model
 {
-    class NASA
-    {
-    }
+	public class NASA
+	{
+	}
 }

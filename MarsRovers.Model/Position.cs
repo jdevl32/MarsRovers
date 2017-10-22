@@ -1,6 +1,6 @@
 ﻿namespace MarsRovers.Model
 {
-	class Position
+	public class Position
 	{
 	}
 }

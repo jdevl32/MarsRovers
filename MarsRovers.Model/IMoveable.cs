@@ -19,8 +19,11 @@
 		/// <param name="boundary">
 		/// </param>
 		/// <returns>
-		/// A new moveable object.  This object remains as it was prior to the operation.
+		/// A new moveable object.
 		/// </returns>
+		/// <remarks>
+		/// This object remains as it was prior to the operation.
+		/// </remarks>
 		T FromMove(T size, T count, T boundary);
 
 		/// <summary>
@@ -34,9 +37,9 @@
 		/// </param>
 		/// <param name="boundary">
 		/// </param>
-		/// <returns>
-		/// A new moveable object.  This object remains as it was prior to the operation.
-		/// </returns>
+		/// <remarks>
+		/// This object is modified after the operation.
+		/// </remarks>
 		void Move(T size, T count, T boundary);
 	}
 }

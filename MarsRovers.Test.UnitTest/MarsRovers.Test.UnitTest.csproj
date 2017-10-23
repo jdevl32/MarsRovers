@@ -55,7 +55,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coordinate\FromMove.cs" />
+    <Compile Include="Location\Instance\GetNewLocation.cs" />
+    <Compile Include="Location\Type\GetNewCoordinate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

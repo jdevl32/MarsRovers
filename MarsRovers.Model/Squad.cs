@@ -19,6 +19,16 @@ namespace MarsRovers.Model
 
 #endregion
 
+#region Instance Initialization
+
+		public Squad(IPlateau plateau)
+		{
+			Plateau = plateau;
+			Rovers = new List<IRover>();
+		}
+
+#endregion
+
 		public void Deploy()
 		{
 			foreach (var rover in Rovers)

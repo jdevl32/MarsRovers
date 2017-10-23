@@ -1,28 +1,20 @@
 ﻿using MarsRovers.Model.Exception;
-using System;
+using MarsRovers.Model.Interface;
 
 namespace MarsRovers.Model
 {
+
 	public class Location
 		:
-		IEquatable<Location>
+		ILocation
 	{
+
 #region Property
 
-		/// <summary>
-		/// The X coordinate value of the location.
-		/// </summary>
-		/// <value>
-		/// Defined as integer, but assumed to be non-negative value only (since Plateau base/origin is defined as (0, 0)).
-		/// </value>
+		/// <inheritdoc />
 		public int X { get; }
 
-		/// <summary>
-		/// The Y coordinate value of the location.
-		/// </summary>
-		/// <value>
-		/// Defined as integer, but assumed to be non-negative value only (since Plateau base/origin is defined as (0, 0)).
-		/// </value>
+		/// <inheritdoc />
 		public int Y { get; }
 
 #endregion
@@ -75,17 +67,18 @@ namespace MarsRovers.Model
 			return origin;
 		}
 
-		public Location GetNewLocation(Location size, Location count, Location boundaryMin, Location boundaryMax) => new Location(GetNewCoordinate(X, size.X, count.X, boundaryMin.X, boundaryMax.X), GetNewCoordinate(Y, size.Y, count.Y, boundaryMin.Y, boundaryMax.Y));
+		/// <inheritdoc />
+		public ILocation GetNewLocation(ILocation size, ILocation count, ILocation boundaryMin, ILocation boundaryMax) => new Location(GetNewCoordinate(X, size.X, count.X, boundaryMin.X, boundaryMax.X), GetNewCoordinate(Y, size.Y, count.Y, boundaryMin.Y, boundaryMax.Y));
 
-		//public void Move(Location size, Location count, Location boundary)
+		//public void Move(ILocation size, ILocation count, ILocation boundary)
 		//{
 		//	X = GetNewCoordinate(X, size.X, count.X, boundary.X);
 		//	Y = GetNewCoordinate(Y, size.Y, count.Y, boundary.Y);
 		//}
 
-#region IEquatable<Location>
+#region IEquatable<ILocation>
 
-		public bool Equals(Location location)
+		public bool Equals(ILocation location)
 		{
 			if (ReferenceEquals(null, location))
 			{
@@ -112,7 +105,7 @@ namespace MarsRovers.Model
 				return true;
 			}
 
-			return obj.GetType() == GetType() && Equals((Location)obj);
+			return obj.GetType() == GetType() && Equals((ILocation) obj);
 		}
 
 		public override int GetHashCode()
@@ -136,5 +129,7 @@ namespace MarsRovers.Model
 #endregion
 
 		public override string ToString() => $"{X} {Y}";
+
 	}
+
 }

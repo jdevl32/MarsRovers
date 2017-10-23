@@ -1,13 +1,17 @@
 ﻿namespace MarsRovers.Model
 {
+
 	public static class CardinalCompassPoint
 	{
-		public const char E = 'E';
 
-		public const char N = 'N';
+		public const char East = 'E';
 
-		public const char S = 'S';
+		public const char North = 'N';
 
-		public const char W = 'W';
+		public const char South = 'S';
+
+		public const char West = 'W';
+
 	}
+
 }

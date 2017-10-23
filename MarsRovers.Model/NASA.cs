@@ -1,16 +1,19 @@
 ﻿using MarsRovers.Model.Exception;
+using MarsRovers.Model.Interface;
 using System;
 using System.Collections.Generic;
 
 namespace MarsRovers.Model
 {
+
 	public static class NASA
 	{
+
 		public const int DefaultCoordinateCount = 1;
 
-		public static Location DefaultCountLocation { get; }
+		public static ILocation DefaultCountLocation { get; }
 
-		private static IDictionary<char, Tuple<Location, char, char>> ExplorationHelper { get; }
+		private static IDictionary<char, Tuple<ILocation, char, char>> ExplorationHelper { get; }
 
 #region Type Initialization
 
@@ -18,30 +21,30 @@ namespace MarsRovers.Model
 		{
 			DefaultCountLocation = new Location(DefaultCoordinateCount, DefaultCoordinateCount);
 			//_InitializeExplorationHelper();
-			ExplorationHelper = new Dictionary<char, Tuple<Location, char, char>>(4)
+			ExplorationHelper = new Dictionary<char, Tuple<ILocation, char, char>>(4)
 			{
 				{
-					CardinalCompassPoint.E
+					CardinalCompassPoint.East
 					,
-					new Tuple<Location, char, char>(new Location(1, 0), CardinalCompassPoint.N, CardinalCompassPoint.S)
+					new Tuple<ILocation, char, char>(new Location(1, 0), CardinalCompassPoint.North, CardinalCompassPoint.South)
 				}
 				,
 				{
-					CardinalCompassPoint.N
+					CardinalCompassPoint.North
 					,
-					new Tuple<Location, char, char>(new Location(0, 1), CardinalCompassPoint.W, CardinalCompassPoint.E)
+					new Tuple<ILocation, char, char>(new Location(0, 1), CardinalCompassPoint.West, CardinalCompassPoint.East)
 				}
 				,
 				{
-					CardinalCompassPoint.S
+					CardinalCompassPoint.South
 					,
-					new Tuple<Location, char, char>(new Location(0, -1), CardinalCompassPoint.E, CardinalCompassPoint.W)
+					new Tuple<ILocation, char, char>(new Location(0, -1), CardinalCompassPoint.East, CardinalCompassPoint.West)
 				}
 				,
 				{
-					CardinalCompassPoint.W
+					CardinalCompassPoint.West
 					,
-					new Tuple<Location, char, char>(new Location(-1, 0), CardinalCompassPoint.S, CardinalCompassPoint.N)
+					new Tuple<ILocation, char, char>(new Location(-1, 0), CardinalCompassPoint.South, CardinalCompassPoint.North)
 				}
 			};
 		}
@@ -53,8 +56,6 @@ namespace MarsRovers.Model
 		//private static void _InitializeExplorationHelper()
 		//{
 		//}
-
-		public static Location GetSizeLocation(char orientation) => ExplorationHelper[orientation].Item1;
 
 		public static char GetNewOrientation(char orientation, char instruction)
 		{
@@ -72,5 +73,9 @@ namespace MarsRovers.Model
 
 			throw new InvalidInstructionException();
 		}
+
+		public static ILocation GetSizeLocation(char orientation) => ExplorationHelper[orientation].Item1;
+
 	}
+
 }

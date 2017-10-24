@@ -55,8 +55,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coordinate\FromMove.cs" />
+    <Compile Include="Location\Instance\GetNewLocation.cs" />
+    <Compile Include="Location\Type\GetNewCoordinate.cs" />
+    <Compile Include="NASA\Type\GetNewOrientation.cs" />
+    <Compile Include="NASA\Type\GetSizeLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rover\Instance\Navigate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,6 +71,7 @@
       <Name>MarsRovers.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,6 +1,6 @@
 ﻿namespace MarsRovers.Model.Exception
 {
-	public class PositionOccupiedException
+	public class LocationOccupiedException
 		:
 		MoveException
 	{

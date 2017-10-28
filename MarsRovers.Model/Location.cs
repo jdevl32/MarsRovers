@@ -4,6 +4,7 @@ using MarsRovers.Model.Interface;
 namespace MarsRovers.Model
 {
 
+	/// <inheritdoc />
 	public class Location
 		:
 		ILocation
@@ -22,10 +23,14 @@ namespace MarsRovers.Model
 #region Instance Initialization
 
 		/// <summary>
-		/// 
+		/// Creates a new location from coordinate values.
 		/// </summary>
-		/// <param name="x"></param>
-		/// <param name="y"></param>
+		/// <param name="x">
+		/// The X-coordinate value of the location to set.
+		/// </param>
+		/// <param name="y">
+		/// The Y-coordinate value of the location to set.
+		/// </param>
 		public Location(int x, int y)
 		{
 			X = x;
@@ -70,14 +75,17 @@ namespace MarsRovers.Model
 		/// <inheritdoc />
 		public ILocation GetNewLocation(ILocation size, ILocation count, ILocation boundaryMin, ILocation boundaryMax) => new Location(GetNewCoordinate(X, size.X, count.X, boundaryMin.X, boundaryMax.X), GetNewCoordinate(Y, size.Y, count.Y, boundaryMin.Y, boundaryMax.Y));
 
-		//public void Move(ILocation size, ILocation count, ILocation boundary)
-		//{
-		//	X = GetNewCoordinate(X, size.X, count.X, boundary.X);
-		//	Y = GetNewCoordinate(Y, size.Y, count.Y, boundary.Y);
-		//}
-
 #region IEquatable<ILocation>
 
+		/// <summary>
+		/// Determines equality with another location.
+		/// </summary>
+		/// <param name="location">
+		/// The target location to test for equality with.
+		/// </param>
+		/// <returns>
+		/// Boolean indicating equality with target location.
+		/// </returns>
 		public bool Equals(ILocation location)
 		{
 			if (ReferenceEquals(null, location))
@@ -92,6 +100,14 @@ namespace MarsRovers.Model
 
 			return X == location.X && Y == location.Y;
 		}
+
+		public static bool operator ==(Location left, Location right) => Equals(left, right);
+
+		public static bool operator !=(Location left, Location right) => !Equals(left, right);
+
+#endregion
+
+#region Object
 
 		public override bool Equals(object obj)
 		{
@@ -116,19 +132,9 @@ namespace MarsRovers.Model
 			}
 		}
 
-		public static bool operator ==(Location left, Location right)
-		{
-			return Equals(left, right);
-		}
-
-		public static bool operator !=(Location left, Location right)
-		{
-			return !Equals(left, right);
-		}
+		public override string ToString() => $"{X} {Y}";
 
 #endregion
-
-		public override string ToString() => $"{X} {Y}";
 
 	}
 

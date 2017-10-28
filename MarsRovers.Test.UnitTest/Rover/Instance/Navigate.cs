@@ -51,6 +51,24 @@ namespace MarsRovers.Test.UnitTest.Rover.Instance
 			Assert.IsTrue("5 1 E" == rover.Position.ToString());
 		}
 
+		[TestMethod]
+		public void Success003()
+		{
+			var rover = new Model.Rover(1, "MMMMM", new Position(new Model.Location(0, 0), CardinalCompassPoint.North), MockNoLocationsOccupied.Object);
+
+			rover.Navigate(Plateau);
+			Assert.IsTrue("0 5 N" == rover.Position.ToString());
+		}
+
+		[TestMethod]
+		public void Success004()
+		{
+			var rover = new Model.Rover(1, "MMMMM", new Position(new Model.Location(0, 0), CardinalCompassPoint.East), MockNoLocationsOccupied.Object);
+
+			rover.Navigate(Plateau);
+			Assert.IsTrue("5 0 E" == rover.Position.ToString());
+		}
+
 	}
 
 }

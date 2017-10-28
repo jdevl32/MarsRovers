@@ -4,6 +4,7 @@ using System;
 namespace MarsRovers.Model
 {
 
+	/// <inheritdoc />
 	public class Position
 		:
 		IPosition
@@ -11,14 +12,25 @@ namespace MarsRovers.Model
 
 #region Property
 
+		/// <inheritdoc />
 		public ILocation Location { get; private set; }
 
+		/// <inheritdoc />
 		public char Orientation { get; private set; }
 
 #endregion
 
 #region Instance Initialization
 
+		/// <summary>
+		/// Creates a new position from location and orientation values.
+		/// </summary>
+		/// <param name="location">
+		/// The location coordinates.
+		/// </param>
+		/// <param name="orientation">
+		/// The orientation.
+		/// </param>
 		public Position(ILocation location, char orientation)
 		{
 			Location = location;
@@ -33,6 +45,7 @@ namespace MarsRovers.Model
 
 #endregion
 
+		/// <inheritdoc />
 		public ILocation Relocate(ILocation location)
 		{
 			var oldLocation = Location;
@@ -40,6 +53,7 @@ namespace MarsRovers.Model
 			return oldLocation;
 		}
 
+		/// <inheritdoc />
 		public char Reorient(char orientation)
 		{
 			var oldOrientation = Orientation;
@@ -47,6 +61,7 @@ namespace MarsRovers.Model
 			return oldOrientation;
 		}
 
+		/// <inheritdoc />
 		public Tuple<ILocation, char> Reposition(ILocation location, char orientation) => new Tuple<ILocation, char>(Relocate(location), Reorient(orientation));
 
 	}

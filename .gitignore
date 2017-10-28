@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /MarsRovers.Test.UnitTest/Coordinate.cs
+/MarsRovers.zip

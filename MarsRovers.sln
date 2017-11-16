@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRovers", "MarsRovers\MarsRovers.csproj", "{D3779DCA-0A8F-470D-873F-7D50642CA2FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRovers", "MarsRovers\MarsRovers.csproj", "{D3779DCA-0A8F-470D-873F-7D50642CA2FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRovers.Model", "MarsRovers.Model\MarsRovers.Model.csproj", "{61299F35-8BA6-4107-91C0-79A747DDAA5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRovers.Model", "MarsRovers.Model\MarsRovers.Model.csproj", "{61299F35-8BA6-4107-91C0-79A747DDAA5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRovers.Test.UnitTest", "MarsRovers.Test.UnitTest\MarsRovers.Test.UnitTest.csproj", "{DEECA773-E9B2-44F5-9333-45210E5E1720}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{3D11425E-2146-4DA9-8155-3D4944478DBC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.git\config = .git\config
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

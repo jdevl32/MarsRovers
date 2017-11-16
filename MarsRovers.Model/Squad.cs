@@ -25,7 +25,7 @@ namespace MarsRovers.Model
 #region Instance Initialization
 
 		/// <summary>
-		/// Creates a new squad of rovers assigned to navigate the plateau.
+		/// Create a new squad of rovers assigned to navigate the plateau.
 		/// </summary>
 		/// <param name="plateau">
 		/// The plateau which is to be navigated by the rovers.
@@ -51,10 +51,11 @@ namespace MarsRovers.Model
 				}
 				catch (MoveException ex)
 				{
-					// Halt current rover progress and roceed to the next rover.
+					// Halt current rover progress and proceed to the next rover.
 				}
 				catch (System.Exception ex)
 				{
+					// Ignore all other exceptions.
 				}
 			} // foreach
 		}

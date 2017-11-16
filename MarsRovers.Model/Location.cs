@@ -75,6 +75,9 @@ namespace MarsRovers.Model
 		/// <inheritdoc />
 		public ILocation GetNewLocation(ILocation size, ILocation count, ILocation boundaryMin, ILocation boundaryMax) => new Location(GetNewCoordinate(X, size.X, count.X, boundaryMin.X, boundaryMax.X), GetNewCoordinate(Y, size.Y, count.Y, boundaryMin.Y, boundaryMax.Y));
 
+		/// <inheritdoc />
+		public ILocation GetNewLocation(ILocation size, ILocation count, IPlateau boundary) => GetNewLocation(size, count, boundary.Origin, boundary.Boundary);
+
 #region IEquatable<ILocation>
 
 		/// <summary>

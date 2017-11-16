@@ -69,7 +69,7 @@ namespace MarsRovers.Model
 					case NavigationInstruction.MoveForward:
 						// Based on the current orientation of the rover and the plateau boundary, 
 						// get (from NASA command center) and calculate the new location.
-						var newLocation = Position.Location.GetNewLocation(NASA.GetSizeLocation(Position.Orientation), NASA.DefaultCountLocation, plateau.Origin, plateau.Boundary);
+						var newLocation = Position.Location.GetNewLocation(NASA.GetSizeLocation(Position.Orientation), NASA.DefaultCountLocation, plateau);
 
 						// Make sure the new location is not already occupied by another rover.
 						if (Squad.IsLocationOccupied(newLocation))

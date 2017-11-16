@@ -3,6 +3,7 @@
 namespace MarsRovers.Model.Interface
 {
 
+	/// <inheritdoc />
 	/// <summary>
 	/// A location consists of X- and Y- coordinate values.
 	/// </summary>
@@ -50,6 +51,23 @@ namespace MarsRovers.Model.Interface
 		/// A new location.
 		/// </returns>
 		ILocation GetNewLocation(ILocation size, ILocation count, ILocation boundaryMin, ILocation boundaryMax);
+
+		/// <summary>
+		/// Gets a new location based on this location, move parameters and (plateau) boundary.
+		/// </summary>
+		/// <param name="size">
+		/// The number of units to move (default is 1).  The total move is the product of count and size.
+		/// </param>
+		/// <param name="count">
+		/// </param>
+		/// The number of times to move the unit size (default is 1).  The total move is the product of count and size.
+		/// <param name="boundary">
+		/// The boundary limits, which the new location may not exceed.
+		/// </param>
+		/// <returns>
+		/// A new location.
+		/// </returns>
+		ILocation GetNewLocation(ILocation size, ILocation count, IPlateau boundary);
 
 #region IEquatable<ILocation>
 
